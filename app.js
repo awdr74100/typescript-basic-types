@@ -1,13 +1,22 @@
-function combine(input1, input2, resultConversion) {
-    if ((typeof input1 === "number" && typeof input2 === "number") ||
-        resultConversion === "as-number") {
-        return +input1 + +input2;
-    }
-    return input1.toString() + " " + input2.toString();
+function add(n1, n2) {
+    return n1 + n2;
 }
-var combinedAges = combine(30, 26, "as-number");
-console.log(combinedAges);
-var combinedStringAges = combine("30", "26", "as-number");
-console.log(combinedAges);
-var combinedNames = combine("Yi-Ru", "Lan", "as-text");
-console.log(combinedNames);
+function printResult(num) {
+    console.log("Result: " + num);
+    return null;
+}
+function addAndHandle(n1, n2, cb) {
+    var result = n1 + n2;
+    var a = cb(result);
+    console.log(a);
+}
+printResult(add(5, 12));
+var combineValues;
+combineValues = add;
+// combineValues = printResult;
+console.log(combineValues(8, 8));
+addAndHandle(10, 20, function (result, ss) {
+    // console.log(result);
+    // console.log(dw);
+    return "dwcccc";
+});
